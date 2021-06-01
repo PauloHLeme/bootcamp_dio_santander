@@ -11,7 +11,8 @@ import java.time.LocalDate;
 public class Stock {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)//Se o DB estivesse fazendo o Auto Incremento, colocaríamos IDENTITY no lugar de AUTO
+    @SequenceGenerator(name = "auto_gen", sequenceName = "1")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "auto_gen")//Se o DB estivesse fazendo o Auto Incremento, colocaríamos IDENTITY no lugar de AUTO
     @Column(name = "id")
     private Long id;
 
